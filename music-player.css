@@ -133,8 +133,6 @@ header h2 {
   --progress: 0%;
 
   width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   height: 10px;
   border-radius: 5px;
@@ -150,7 +148,6 @@ header h2 {
 }
 
 .progress::-webkit-slider-thumb {
-  -webkit-appearance: none;
   appearance: none;
   width: 20px;
   height: 20px;
