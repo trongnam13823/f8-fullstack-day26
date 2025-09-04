@@ -145,9 +145,24 @@ header h2 {
   );
   outline: none;
   cursor: pointer;
+  position: relative;
+}
+
+.progress::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 100%;
+  top: 50%;
+  left: var(--progress);
+  transform: translate(-50%, -50%);
 }
 
 .progress::-webkit-slider-thumb {
+  opacity: 0;
   appearance: none;
   width: 20px;
   height: 20px;
