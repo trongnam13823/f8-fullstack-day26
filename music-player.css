@@ -134,41 +134,54 @@ header h2 {
 
   width: 100%;
   appearance: none;
-  height: 10px;
+  height: 8px;
   border-radius: 5px;
-  background: linear-gradient(
-    to right,
-    var(--primary-color) 0%,
-    var(--primary-color) var(--progress, 0%),
-    #d3d3d3 var(--progress, 0%),
-    #d3d3d3 100%
-  );
+  background: #d3d3d3;
   outline: none;
   cursor: pointer;
   position: relative;
 }
 
+.progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--progress);
+  background: #666;
+  border-radius: inherit;
+}
+
 .progress::after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: var(--primary-color);
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border: 1px solid var(--primary-color);
   cursor: pointer;
   border-radius: 100%;
   top: 50%;
   left: var(--progress);
   transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.progress:hover::after {
+  opacity: 1;
+}
+
+.progress:hover::before {
+  background: var(--primary-color);
 }
 
 .progress::-webkit-slider-thumb {
   opacity: 0;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background-color: var(--primary-color);
-  cursor: pointer;
 }
 
 /* PLAYLIST */
